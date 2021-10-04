@@ -1,0 +1,73 @@
+[System]
+Name='Mamdani_Fuzzy_Logic'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=19
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='distance'
+Range=[0 142]
+NumMFs=5
+MF1='MS':'psigmf',[2.77 -4.63 -0.4638 13.6]
+MF2='SS':'gaussmf',[8.237 28]
+MF3='H':'gaussmf',[9.549 50]
+MF4='SF':'gaussmf',[9.601 74.4]
+MF5='MF':'psigmf',[0.515 89.19 -0.166 177.4]
+
+[Input2]
+Name='phi'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=5
+MF1='PS':'psigmf',[5.093 -2.356 -5.093 -0.7854]
+MF2='PF':'gaussmf',[0.5027 -3.142]
+MF3='Z':'trimf',[-1.257 0 1.257]
+MF4='NS':'psigmf',[5.093 0.7854 -5.093 2.356]
+MF5='NF':'gaussmf',[0.5027 3.142]
+
+[Output1]
+Name='linear_velocity'
+Range=[0 5]
+NumMFs=5
+MF1='MS':'trimf',[-1.25 0 1.25]
+MF2='SS':'trimf',[0 1.25 2.5]
+MF3='H':'trimf',[1.25 2.5 3.75]
+MF4='SF':'trimf',[2.5 3.75 5]
+MF5='MF':'trimf',[3.75 5 6.25]
+
+[Output2]
+Name='angular_velocity'
+Range=[-0.5 0.5]
+NumMFs=5
+MF1='NF':'trimf',[-0.75 -0.5 -0.25]
+MF2='NS':'trimf',[-0.5 -0.25 0]
+MF3='Z':'trimf',[-0.25 0 0.25]
+MF4='PS':'trimf',[0 0.25 0.5]
+MF5='PF':'trimf',[0.25 0.5 0.75]
+
+[Rules]
+-1 2, 1 4 (1) : 1
+1 2, 1 5 (1) : 1
+1 1, 1 4 (1) : 1
+2 1, 2 4 (1) : 1
+3 1, 2 4 (1) : 1
+4 1, 3 4 (1) : 1
+5 1, 3 4 (1) : 1
+1 3, 1 3 (1) : 1
+2 3, 3 3 (1) : 1
+3 3, 4 3 (1) : 1
+4 3, 5 3 (1) : 1
+5 3, 5 3 (1) : 1
+1 4, 1 2 (1) : 1
+2 4, 2 2 (1) : 1
+3 4, 2 2 (1) : 1
+4 4, 3 2 (1) : 1
+5 4, 3 2 (1) : 1
+1 5, 1 2 (1) : 1
+-1 5, 1 1 (1) : 1
