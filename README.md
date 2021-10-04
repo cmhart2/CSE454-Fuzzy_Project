@@ -1,11 +1,11 @@
 Fuzzy Inference Engine
 ==
-
+Caroline Hart
 
 About
 ---
 
-This project utilizes a fuzzy inference engine in order to make the decisions for a robot which must navigate from a starting point to a destination point.
+This project uses a fuzzy autonomous control system for a robot in order to take the robot from the starting position to the destination. The robot must start with a velocity of zero, and an angle of zero. The robot is only able to change its forward speed and the angle it is facing. The robot must start at a position inputted by the user, and travel to a predetermined destination.
 
 Getting Started
 ----
