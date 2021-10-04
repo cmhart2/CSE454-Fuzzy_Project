@@ -1,7 +1,7 @@
 Fuzzy Inference Engine
 ==
 
---
+------
 About
 --
 
