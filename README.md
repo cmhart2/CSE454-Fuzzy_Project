@@ -7,7 +7,7 @@ About
 
 This project utilizes a fuzzy inference engine in order to make the decisions for a robot which must navigate from a starting point to a destination point.
 
-----
+
 Getting Started
 ----
 
@@ -15,7 +15,7 @@ Open the directory in MATLAB R2021b. Run the file `fuzzy_project_cmhart2.mlx`. U
 
 At this point, a new window will open in the MATLAB application
 
-----
+
 Requirements
 ----
 
