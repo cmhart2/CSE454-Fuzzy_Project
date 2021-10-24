@@ -1,0 +1,73 @@
+[System]
+Name='Fuzzy2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=19
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='distance'
+Range=[0 142]
+NumMFs=5
+MF1='MS':'trapmf',[-31.95 -3.55 3.55 31.95]
+MF2='SS':'trapmf',[3.55 31.95 39.05 67.45]
+MF3='H':'trapmf',[39.05 67.45 74.55 103]
+MF4='SF':'trapmf',[74.55 103 110 138.4]
+MF5='MF':'trapmf',[110 138.4 145.5 174]
+
+[Input2]
+Name='phi'
+Range=[-3.142 3.142]
+NumMFs=5
+MF1='PF':'trapmf',[-4.556 -3.299 -2.985 -1.728]
+MF2='PS':'trapmf',[-2.985 -1.728 -1.414 -0.1571]
+MF3='Z':'trapmf',[-1.414 -0.1571 0.1571 1.414]
+MF4='NS':'trapmf',[0.1571 1.414 1.728 2.985]
+MF5='NF':'trapmf',[1.728 2.985 3.299 4.556]
+
+[Output1]
+Name='linear_velocity'
+Range=[0 10]
+NumMFs=5
+MF1='MS':'trapmf',[-2.25 -0.25 0.25 2.25]
+MF2='SS':'trapmf',[0.25 2.25 2.75 4.75]
+MF3='H':'trapmf',[2.75 4.75 5.25 7.25]
+MF4='SF':'trapmf',[5.25 7.25 7.75 9.75]
+MF5='MF':'trapmf',[7.75 9.75 10.25 12.25]
+
+[Output2]
+Name='angular_velocity'
+Range=[-0.5 0.5]
+NumMFs=5
+MF1='NF':'trapmf',[-0.725 -0.525 -0.475 -0.275]
+MF2='NS':'trapmf',[-0.475 -0.275 -0.225 -0.025]
+MF3='Z':'trimf',[-0.25 0 0.25]
+MF4='PS':'trapmf',[0.025 0.225 0.275 0.475]
+MF5='PF':'trapmf',[0.275 0.475 0.525 0.725]
+
+[Rules]
+-1 1, 1 5 (1) : 1
+1 1, 1 5 (1) : 1
+1 2, 1 4 (1) : 1
+2 2, 2 4 (1) : 1
+3 2, 2 4 (1) : 1
+4 2, 3 4 (1) : 1
+5 2, 3 4 (1) : 1
+1 3, 1 3 (1) : 1
+2 3, 3 3 (1) : 1
+3 3, 4 3 (1) : 1
+4 3, 5 3 (1) : 1
+5 3, 5 3 (1) : 1
+1 4, 1 2 (1) : 1
+2 4, 2 2 (1) : 1
+3 4, 2 2 (1) : 1
+4 4, 3 2 (1) : 1
+5 4, 3 2 (1) : 1
+1 5, 1 2 (1) : 1
+-1 5, 1 1 (1) : 1
